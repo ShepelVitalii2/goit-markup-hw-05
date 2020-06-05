@@ -1,5 +1,7 @@
+
+
 .main{
-    background-color: var(--main-bg-decoration);
+    background-color: var(--nav-bg-decoration);
 }
 
 .main__container{
@@ -26,10 +28,17 @@
 }
 
 .project__item{
+    position: relative;
+
     width: calc((100% - 60px) / 3);
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+
+    /* overflow: hidden; */
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+}
+
+.project__item:hover::after{
+    opacity: 1;
 }
 
 .project__item:not(:nth-child(3n)){
@@ -47,9 +56,67 @@
 
 }
 
-.project__tech-text{
-    display: none;
+.card-thumb {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project__tech-text{
+    
+    padding: 63px 24px;
+    color: var(--primary-white-color);
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+  }
+  
+  .overlay {
+      display: inline-block;
+    content: "";
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(33, 150, 243);
+    
+    opacity: 0;
+    transform: translateY(100%);
+    
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .project__item:hover .overlay,
+  .project__item:focus .overlay {
+    opacity: 0.9;
+    
+    transform: translateY(0%);
+
+    color: var(--title-text-decoration);
+  }
+
+/* .project__tech-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 63px 24px;
+    height: 294px;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    
+    color: var(--title-text-decoration);
+    background: rgba(33, 150, 243);
+    opacity: 0;
 }
+
+.project__tech-text:hover{
+    opacity: 0.9;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+} */
 
 .project__name{
     margin-bottom: 4px;
@@ -72,18 +139,20 @@
 border-right: 1px solid #eeeeee;
 border-bottom: 1px solid #eeeeee;
 border-left: 1px solid #eeeeee;
-background-color: #ffffff;;
+background-color: #ffffff;
 
-border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;
 
-/* ПАДДИНГ 24ПИКСЕЛЯ НЕ ПОМЕЩАЕТСЯ */
+/* border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px; */
+
+
 padding: 20px 24px;
 }
 
 .project-button :hover,
 .project-button :focus{
     color:var(--accent-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
